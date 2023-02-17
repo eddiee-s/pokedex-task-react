@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { POKEMON_COLORS, POKEMON_FONT_COLORS } from "../helpers/constats"
 import { PokemonColor, PokemonDetails } from "../types"
-import getPokemonTag from "../helpers/pokemon-tag"
+import { getPokemonTag } from "../helpers/pokemon-tag-move"
 import PokeDetaislTab from "./PokeDetailsTab"
 
 interface PokeCardPropsType {
@@ -29,10 +29,15 @@ const PokeCard: FC<PokeCardPropsType> = ({ data }) => {
             }`,
           }}
         >
-          <h1 className="text-xl font-medium ">
-            {data.name}
-          </h1>
-          <h2 className="" style={{color:POKEMON_FONT_COLORS[pokeColor as keyof PokemonColor]}}>{getPokemonTag(data.id)}</h2>
+          <h1 className="text-xl font-medium ">{data.name}</h1>
+          <h2
+            className=""
+            style={{
+              color: POKEMON_FONT_COLORS[pokeColor as keyof PokemonColor],
+            }}
+          >
+            {getPokemonTag(data.id)}
+          </h2>
         </div>
         <div className="h-48 bg-pokeball bg-no-repeat bg-cover absolute top-10 -right-5">
           <figure>
@@ -44,7 +49,7 @@ const PokeCard: FC<PokeCardPropsType> = ({ data }) => {
           </figure>
         </div>
         <div className="flex flex-col h-3/5 w-full bg-white rounded-t-2xl -mt-2 p-2">
-          <PokeDetaislTab data={data}/>
+          <PokeDetaislTab data={data} />
         </div>
       </div>
     </div>

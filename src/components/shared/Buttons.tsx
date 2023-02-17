@@ -3,6 +3,23 @@ import { FC } from "react"
 interface ButtonsPropsType {
   onClick: () => void
   active?: boolean
+  children?:  JSX.Element | string
+  className?: string
+}
+
+export const Button: FC<ButtonsPropsType> = ({ onClick, active, children, className }) => {
+  return (
+    <button
+      type="button"
+      className={`${buttonStyle} ${
+        active && "opacity-50 cursor-not-allowed"
+      } sm:rounded-md ${className}`}
+      onClick={onClick}
+      disabled={active}
+    >
+      {children}
+    </button>
+  )
 }
 
 export const ButtonPrev: FC<ButtonsPropsType> = ({ onClick, active }) => {
@@ -71,8 +88,7 @@ export const ButtonNext: FC<ButtonsPropsType> = ({ onClick, active }) => {
   )
 }
 
-const buttonStyle =
-  "relative inline-flex items-center px-2 py-2 text-sm 5xl:text-xl font-medium text-gray-700 bg-white border border-gray-300 rounded-md sm:rounded-none hover:bg-gray-50"
+const buttonStyle = "relative inline-flex items-center px-2 py-2 text-sm 5xl:text-xl font-medium text-gray-700 bg-white border border-gray-300 rounded-md sm:rounded-none hover:bg-gray-50"
 
 interface TabSelectBtnPropTypes {
   isActive: boolean
