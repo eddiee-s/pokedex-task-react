@@ -22,6 +22,7 @@ export type PokemonDetails = {
   color: PokeColor
   flavor_text_entries: FlavorEntries[]
   evolution_chain?: { url: string }
+  moves: Moves []
 }
 
 export type Types = {
@@ -87,6 +88,16 @@ export type EvolutionResult = {
   item: any
 }
 
+export type Moves = {
+  move: Move
+  version_group_details: []
+}
+
+export type Move = {
+  name: string
+  url: string
+}
+
 export type EvolutionDetails = {
   gender: string | number | null
   held_item: string | number | null
@@ -109,22 +120,22 @@ export type EvolutionDetails = {
 }
 
 export interface PokemonColor {
-  fire?: String;
-  grass?: String;
-  water?: String;
-  normal?: String;
-  fighting?: String;
-  flying?: String;
-  poison?: String;
-  ground?: String;
-  rock?: String;
-  bug?: String;
-  ghost?: String;
-  steel?: String;
-  electric?: String;
-  psychic?: String;
-  ice?: String;
-  dragon?: String;
-  dark?: String;
-  fairy?: String;
-};
+  fire?: String
+  grass?: String
+  water?: String
+  normal?: String
+  fighting?: String
+  flying?: String
+  poison?: String
+  ground?: String
+  rock?: String
+  bug?: String
+  ghost?: String
+  steel?: String
+  electric?: String
+  psychic?: String
+  ice?: String
+  dragon?: String
+  dark?: String
+  fairy?: String
+}

@@ -1,8 +1,8 @@
 import { FC } from "react"
 import { POKEMON_COLORS, POKEMON_FONT_COLORS } from "../helpers/constats"
 import { PokemonColor, PokemonDetails } from "../types"
-import pokeball from "../assets/pokeball.png"
 import getPokemonTag from "../helpers/pokemon-tag"
+import PokeDetaislTab from "./PokeDetailsTab"
 
 interface PokeCardPropsType {
   data: PokemonDetails
@@ -43,8 +43,8 @@ const PokeCard: FC<PokeCardPropsType> = ({ data }) => {
             />
           </figure>
         </div>
-        <div className="flex flex-col h-3/5 w-full bg-white rounded-t-2xl -mt-2">
-
+        <div className="flex flex-col h-3/5 w-full bg-white rounded-t-2xl -mt-2 p-2">
+          <PokeDetaislTab data={data}/>
         </div>
       </div>
     </div>
