@@ -1,4 +1,4 @@
-export const POKEMON_TYPE_COLORS = {
+export const POKEMON_COLORS = {
   fire: "#E9756F",
   grass: "#70CDB1",
   water: "#8ABCF5",
@@ -17,9 +17,9 @@ export const POKEMON_TYPE_COLORS = {
   dragon: "#7038F8",
   dark: "#705848",
   fairy: "#EE99AC",
-};
+}
 
-export const POKEMON_TYPE_FONT_COLORS = {
+export const POKEMON_FONT_COLORS = {
   fire: "#a3524e",
   grass: "#4e907c",
   water: "#6184ac",
@@ -38,4 +38,4 @@ export const POKEMON_TYPE_FONT_COLORS = {
   dragon: "#4e27ae",
   dark: "#4e3e32",
   fairy: "#a76b78",
-};
+}

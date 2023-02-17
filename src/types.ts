@@ -107,3 +107,24 @@ export type EvolutionDetails = {
   trigger: PokemonsList
   turn_upside_down: boolean
 }
+
+export interface PokemonColor {
+  fire?: String;
+  grass?: String;
+  water?: String;
+  normal?: String;
+  fighting?: String;
+  flying?: String;
+  poison?: String;
+  ground?: String;
+  rock?: String;
+  bug?: String;
+  ghost?: String;
+  steel?: String;
+  electric?: String;
+  psychic?: String;
+  ice?: String;
+  dragon?: String;
+  dark?: String;
+  fairy?: String;
+};
