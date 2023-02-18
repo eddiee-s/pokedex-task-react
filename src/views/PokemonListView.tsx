@@ -38,7 +38,7 @@ const PokemonListView = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex items-center justify-center my-16 py-6 ">
+      <div className="flex items-center justify-center mb-16 py-6 ">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {!isFetching ? (
             allPokemons.map((pokemon) => <PokeCard data={pokemon} />)

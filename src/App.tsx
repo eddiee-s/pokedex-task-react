@@ -3,7 +3,10 @@ import PokemonListView from './views/PokemonListView'
 function App() {
 
   return (
-    <PokemonListView/>
+    <>
+      <header className='bg-pokelogo bg-no-repeat bg-contain bg-center h-28 w-full my-5'/>
+      <PokemonListView/>
+    </>
   )
 }
 

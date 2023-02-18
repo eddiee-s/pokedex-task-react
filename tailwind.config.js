@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        pokelogo: "url('../public/pokelogo.png')",
         pokeball: "url('../public/pokeball.png')",
         pokeballgray: "url('../public/pokeball-w.png')",
       },

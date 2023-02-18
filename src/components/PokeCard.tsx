@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { POKEMON_COLORS, POKEMON_FONT_COLORS } from "../helpers/constats"
 import { PokemonColor, PokemonDetails } from "../types"
-import { getPokemonTag } from "../helpers/pokemon-tag-move"
+import { getPokemonTag } from "../helpers/pokemon-string-functions"
 import PokeDetaislTab from "./PokeDetailsTab"
 
 interface PokeCardPropsType {

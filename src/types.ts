@@ -24,6 +24,7 @@ export type PokemonDetails = {
   evolution_chain?: { url: string }
   moves: Moves []
   species: PokemonsList
+  held_items: HeldItems []
 }
 
 export type Types = {
@@ -97,6 +98,11 @@ export type Moves = {
 export type Move = {
   name: string
   url: string
+}
+
+export type HeldItems = {
+  item:PokemonsList
+  version_details:[]
 }
 
 export type EvolutionDetails = {

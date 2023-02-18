@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { getPokemonMoveName } from "../../helpers/pokemon-tag-move"
+import { pokemonDashRemove } from "../../helpers/pokemon-string-functions"
 import { Moves } from "../../types"
 import randomColor from "randomcolor"
 import { Button } from "../shared/Buttons"
@@ -25,7 +25,7 @@ const PokeMoves: FC<MovesPropsType> = ({ moves }) => {
             }}
             className="p-2 m-1 rounded-xl text-sm text-white font-bold"
           >
-            <span>{getPokemonMoveName(item.move.name)}</span>
+            <span>{pokemonDashRemove(item.move.name)}</span>
           </div>
         ))}
         {moves.length > 10 ? <div className="flex justify-end"><Button className="border-0 hover:text-indigo-500 hover:bg-white" onClick={()=>console.log("first")}> Show more... </Button> </div> : <></>}
