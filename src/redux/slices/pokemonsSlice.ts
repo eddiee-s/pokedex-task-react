@@ -12,19 +12,10 @@ const slice = createSlice({
       return {
         ...state,
         allPokemons: action.payload,
-      };
-    },
-    currentPokemon: (state, action) => {
-      return {
-        ...state,
-        ...{ singlePokemon: action.payload },
-      };
+      }
     },
   },
-});
+})
 
-export default slice.reducer;
-export const {
-  setAllPokemons,
-  currentPokemon,
-} = slice.actions;
+export default slice.reducer
+export const { setAllPokemons } = slice.actions

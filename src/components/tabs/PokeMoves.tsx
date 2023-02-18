@@ -28,7 +28,7 @@ const PokeMoves: FC<MovesPropsType> = ({ moves }) => {
             <span>{pokemonDashRemove(item.move.name)}</span>
           </div>
         ))}
-        {moves.length > 10 ? <div className="flex justify-end"><Button className="border-0 hover:text-indigo-500 hover:bg-white" onClick={()=>console.log("first")}> Show more... </Button> </div> : <></>}
+        {moves.length > 10 ? <div className="flex justify-end"><Button className="border-0 hover:text-indigo-500 hover:bg-white" onClick={()=>console.log("show more")}> Show more... </Button> </div> : <></>}
       </div>
     </>
   )

@@ -22,7 +22,7 @@ const PokeDetailsTab:FC<PokeDetailsTabPropsType> = ({details}) => {
   const {
     data = [],
     isSuccess,
-  } = usePokemonsDetailsQuery(details.id);
+  } = usePokemonsDetailsQuery(details.id)
   return (
     <>
       <div className="flex border-b border-gray-300 px-1">

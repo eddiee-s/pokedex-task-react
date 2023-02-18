@@ -1,6 +1,6 @@
-import React, { FC, useEffect, useState } from "react"
+import { FC, useEffect, useState } from "react"
 import handleEvoChain from "../../helpers/pokemon-evolution-chain"
-import { EvolutionChain, EvolutionResult, PokemonDetails } from "../../types"
+import { EvolutionResult } from "../../types"
 import { usePokemonsEvolutionChainQuery } from "../../redux/api/index"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
@@ -20,8 +20,6 @@ const PokeEvolution: FC<PokeEvolutionPropsType> = ({ url }) => {
     } else return
   }, [data])
 
-  console.log(url)
-  console.log(evolutionData)
   return (
     <div className="flex flex-col mt-3">
       <h1 className="font-bold text-indigo-500 mb-3" >Evolution Chain</h1>

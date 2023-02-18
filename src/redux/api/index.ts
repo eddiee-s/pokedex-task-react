@@ -19,8 +19,6 @@ export const pokemonsApi = createApi({
         const fetchResult = await fetchWithBQ(`/pokemon?offset=${data.offset}&limit=${data.limit}`)
         if (fetchResult.error) return { error: fetchResult.error }
         const pokemonList = fetchResult.data as dataType
-        //TODO: REMOVE CLG
-        console.log(pokemonList)
         const pokemonsDetails = await Promise.all(
           pokemonList.results.map((poke: PokemonDetails) =>
             fetchWithBQ(`pokemon/${poke.name}`)

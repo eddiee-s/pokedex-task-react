@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { pokemonsApi } from "./api/index"
-import pokemonReducer from "./slices/pokemonsSlice";
+import pokemonReducer from "./slices/pokemonsSlice"
 
 export const store = configureStore({
   reducer: {
@@ -12,9 +12,9 @@ export const store = configureStore({
       immutableCheck: { warnAfter: 200 },
       serializableCheck: false,
     }).concat(pokemonsApi.middleware),
-});
+})
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = typeof store.dispatch

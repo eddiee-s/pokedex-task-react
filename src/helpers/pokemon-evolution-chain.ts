@@ -1,11 +1,9 @@
-import { EvolutionData, EvolutionResult, PokemonDetails} from "../types"
+import { EvolutionData, EvolutionResult, PokemonDetails } from "../types"
 
 export default function handleEvoChain(
   result: EvolutionData,
   pokemons: PokemonDetails[]
 ) {
-  console.log("result:", result)
-  console.log("pokemons:", pokemons)
   let evoChain = [] as any
   let evoData = result.chain as any
   do {
@@ -27,6 +25,5 @@ export default function handleEvoChain(
       ...item,
       id: pokemons.find((f) => f.name === item.species_name)?.id,
     }))
-  console.log("evoChain:", evoChain)
   return evoChain
 }

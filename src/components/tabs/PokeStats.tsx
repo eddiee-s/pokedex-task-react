@@ -8,10 +8,6 @@ interface PokeStatsPropsType {
 }
 
 const PokeStats: FC<PokeStatsPropsType> = ({ stats }) => {
-  const total = stats
-    ?.map((item) => item.base_stat)
-    .reduce((prev, acc) => acc + prev, 0) as number
-
   return (
     <div>
       {stats.map((item, i) => (
