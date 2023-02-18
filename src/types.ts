@@ -23,6 +23,7 @@ export type PokemonDetails = {
   flavor_text_entries: FlavorEntries[]
   evolution_chain?: { url: string }
   moves: Moves []
+  species: PokemonsList
 }
 
 export type Types = {

@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         pokeball: "url('../public/pokeball.png')",
+        pokeballgray: "url('../public/pokeball-w.png')",
       },
     },
     plugins: [],

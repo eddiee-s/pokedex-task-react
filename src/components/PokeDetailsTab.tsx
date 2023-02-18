@@ -2,19 +2,26 @@ import { FC } from "react"
 import { TabPanel, useTabs } from "react-headless-tabs"
 import { TabSelectBtn } from "../components/shared/Buttons"
 import { PokemonDetails } from "../types"
-import PokeMoves from './tabs/PokeMoves'
+import PokeMoves from './tabs/PokeMoves' 
+import PokeEvolution from './tabs/PokeEvolution' 
+import { usePokemonsDetailsQuery } from "../redux/api"
 
 interface PokeDetailsTabPropsType {
-  data: PokemonDetails
+  details: PokemonDetails
 }
 
-const PokeDetailsTab:FC<PokeDetailsTabPropsType> = ({data}) => {
+const PokeDetailsTab:FC<PokeDetailsTabPropsType> = ({details}) => {
   const [selectedTab, setSelectedTab] = useTabs([
     "moves",
     "evolutions",
     "held-items",
     "stats",
   ])
+  console.log(details)
+  const {
+    data = [],
+    isSuccess,
+  } = usePokemonsDetailsQuery(details.id);
   return (
     <>
       <div className="flex border-b border-gray-300 px-1">
@@ -45,9 +52,11 @@ const PokeDetailsTab:FC<PokeDetailsTabPropsType> = ({data}) => {
       </div>
       <div className="p-4">
         <TabPanel hidden={selectedTab !== "moves"}>
-          <PokeMoves moves={data.moves}/>
+          <PokeMoves moves={details.moves}/>
         </TabPanel>
-        <TabPanel hidden={selectedTab !== "evolutions"}>Poke Evolutions</TabPanel>
+        <TabPanel hidden={selectedTab !== "evolutions"}>
+          {isSuccess && <PokeEvolution url={data.evolution_chain.url}/>}
+        </TabPanel>
         <TabPanel hidden={selectedTab !== "held-items"}>Held-items Pokemon</TabPanel>
         <TabPanel hidden={selectedTab !== "stats"}>Poke Stats</TabPanel>
       </div>

@@ -12,13 +12,6 @@ const PokeCard: FC<PokeCardPropsType> = ({ data }) => {
   console.log(POKEMON_COLORS[data.types[0].type.name as keyof PokemonColor])
   const pokeColor = data.types[0].type.name
   return (
-    // <div className="flex flex-row w-full">
-    //   {data.map((pokemon) => (
-    //     <div className="w-1/2 border border-gray rounded-full" key={pokemon.id}>
-    //       <p> {pokemon.name} </p>
-    //     </div>
-    //   ))}
-    // </div>
     <div className="relative w-80 h-[35rem] shadow-lg bg-white border border-gray-200 rounded-xl">
       <div className="flex flex-col w-full h-full items-center">
         <div
@@ -49,7 +42,7 @@ const PokeCard: FC<PokeCardPropsType> = ({ data }) => {
           </figure>
         </div>
         <div className="flex flex-col h-3/5 w-full bg-white rounded-t-2xl -mt-2 p-2">
-          <PokeDetaislTab data={data} />
+          <PokeDetaislTab details={data} />
         </div>
       </div>
     </div>
